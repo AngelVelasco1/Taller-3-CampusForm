@@ -14,24 +14,37 @@
 <body>
     <div id="center">
         <div id="formContainer">
-            <label for="" id="title">Campus Form</label>
+            <label for="" class="title">Campus Form</label>
             <select name="menu" id="menu">
-                <option>Select an Option</option>
+                <option>Select a person</option>
                 <option value="trainer">Trainer</option>
                 <option value="camper">Camper</option>
             </select>
-        
-        
+            
+           
             <form id="trainer">
                 <fieldset>
-                    <legend>You're a trainer</legend>
+
+                    <label for="menu_city" class="title">City</label>
+                    <select name="menu_city" id="menu_city">
+                        <option>Select your city:</option>
+                        <option value="Bucaramanga">Bucaramanga</option>
+                        <option value="Bogota">Bogota</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Medellin">Medellin</option>
         
+                    </select>
+                
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name">
         
                     <label for="phone">Phone</label>
                     <input type="number" name="phone" id="phone">
-        
+                    
+                    
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                    
                     <label for="team">Choose your team:</label>
                     <select name="team" id="team">  
                         <option value="1">Team 1</option>
@@ -39,15 +52,12 @@
                         <option value="3">Team 3</option>
                         <option value="4">Team 4</option>
                     </select>
-        
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <label for="hour">Hour</label>
+                    <select name="hour" id="hour">  
+                        <option value="6:00 - 14:00">6:00 - 14:00</option>
+                        <option value="14:00 - 22:00">14:00 - 22:00</option>
+                    </select>
 
-                    <label for="">Hour</label>
-
-                    <label for="">Room</label>
-
-                    <label for="">Floor</label>
                     
                 </fieldset>
                 <button type="submit" class="button" name="submit" id="submit">
@@ -57,53 +67,92 @@
                     
                 </button>
             </form>
-            <div id="result" style="display: none;"></div>
 
             <form id="camper">
                 <fieldset>
-                    <legend>You're a camper</legend>
         
-                    <label for="name">Name</label>
-                    <input type="text" >
+                    <label for="menu_city_camper" class="title">City</label>
+                    <select name="menu_city_camper" id="menu_city_camper">
+                        <option>Select your city:</option>
+                        <option value="Bucaramanga">Bucaramanga</option>
+                        <option value="Bogota">Bogota</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Medellin">Medellin</option>
         
-                    <label for="phone">Phone</label>
-                    <input type="number">
+                    </select>
+
+                    <label for="name_camper">Name</label>
+                    <input type="text" name="name_camper" id="name_camper">
         
-                    <label for="team">Choose your team:</label>
-                    <select name="team" id="team">
+                    <label for="phone_camper">Phone</label>
+                    <input type="number" name="phone_camper" id="phone_camper">
+        
+        
+                    <label for="email_camper">Email</label>
+                    <input type="email" name="email_camper" id="email_camper">
+
+                    <label for="team_camper">Team </label>
+                    <select name="team_camper" id="team_camper">
+                        <option value="">Choose your team:</option>
                         <option value="1">Team 1</option>
                         <option value="2">Team 2</option>
                         <option value="3">Team 3</option>
                         <option value="4">Team 4</option>
                     </select>
         
-                    <label for="email">Email</label>
-                    <input type="email">
-        
                     <label for="level">Level</label>
-                    <select name="level" id="">
+                    <select name="level" id="level">
                         <option value="">Choose your level:</option>
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
                     </select>
-        
-                    <label for="technology">Type your technology:</label>
-                    <input type="text">
+
+                    <label for="roadmad">Roadmap</label>
+                    <select name="roadmap" id="roadmap">
+                        <option value="">Choose your roadmap:</option>
+                        <option value="Basic Programming">Basic Programming</option>
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+
+                    </select>
+
+                    <label for="hour_camper">Hour</label>
+                    <select name="hour_camper" id="hour_camper">  
+                        <option value="6:00 - 14:00">6:00 - 14:00</option>
+                        <option value="14:00 - 22:00">14:00 - 22:00</option>
+                    </select>
+
+                    
+                    <label for="english_hour">English Hour</label>
+                    <select name="english_hour" id="english_hour">  
+                        <option value="6:00 - 7:00">6:00 - 7:00</option>
+                        <option value="7:00 - 8:00">7:00 - 8:00</option>
+                        <option value="8:00 - 9:00">8:00 - 9:00</option>
+                        <option value="9:00 - 10:00">9:00 - 10:00</option>
+                    </select>
+
+                          
+                    <label for="ser_hour">Ser Hour</label>
+                    <select name="ser_hour" id="ser_hour">  
+                        <option value="10:00 - 11:00">10:00 - 11:00</option>
+                        <option value="11:00 - 12:00">11:00 - 12:00</option>
+                    </select>
+
         
                     <label for="neighborhood">Neighborhood</label>
-                    <input type="text">
+                    <input type="text" name="neighborhood" id= "neighborhood">
         
                     <label for="transportation">Transportation</label>
-                    <select name="" id="">
+                    <select name="transportation" id="transportation">
                         <option value="">Choose your transport:</option>
-                        <option value="car">Car</option>
-                        <option value="motorcycle">Motorcycle</option>
-                        <option value="bicycle">Bicycle</option>
-                        <option value="public">Public Transport</option>
+                        <option value="Car">Car</option>
+                        <option value="Motorcycle">Motorcycle</option>
+                        <option value="Bicycle">Bicycle</option>
+                        <option value="Public">Public Transport</option>
                     </select>
                 </fieldset>
-                <button type="submit" class="button">
+                <button type="submit" class="button" name="submit" id="submit">
                     <span>
                         Submit
                     </span>
@@ -112,7 +161,9 @@
 
             </form>
         </div>
-     
+
+        <div id="result" style="display: none;"></div>
+        <div id="resultCamper" style="display: none"></div>
     </div>
  
 
