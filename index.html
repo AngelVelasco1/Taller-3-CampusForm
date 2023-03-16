@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 3</title>
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="center">
+        <div id="formContainer">
+            <label for="" id="title">Campus Form</label>
+            <select name="menu" id="menu">
+                <option>Select an Option</option>
+                <option value="trainer">Trainer</option>
+                <option value="camper">Camper</option>
+            </select>
+        
+        
+            <form id="trainer">
+                <fieldset>
+                    <legend>You're a trainer</legend>
+        
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+        
+                    <label for="phone">Phone</label>
+                    <input type="number" name="phone" id="phone">
+        
+                    <label for="team">Choose your team:</label>
+                    <select name="team" id="team">  
+                        <option value="1">Team 1</option>
+                        <option value="2">Team 2</option>
+                        <option value="3">Team 3</option>
+                        <option value="4">Team 4</option>
+                    </select>
+        
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+
+                    <label for="">Hour</label>
+
+                    <label for="">Room</label>
+
+                    <label for="">Floor</label>
+                    
+                </fieldset>
+                <button type="submit" class="button" name="submit" id="submit">
+                    <span>
+                        Submit
+                    </span>
+                    
+                </button>
+            </form>
+            <div id="result" style="display: none;"></div>
+
+            <form id="camper">
+                <fieldset>
+                    <legend>You're a camper</legend>
+        
+                    <label for="name">Name</label>
+                    <input type="text" >
+        
+                    <label for="phone">Phone</label>
+                    <input type="number">
+        
+                    <label for="team">Choose your team:</label>
+                    <select name="team" id="team">
+                        <option value="1">Team 1</option>
+                        <option value="2">Team 2</option>
+                        <option value="3">Team 3</option>
+                        <option value="4">Team 4</option>
+                    </select>
+        
+                    <label for="email">Email</label>
+                    <input type="email">
+        
+                    <label for="level">Level</label>
+                    <select name="level" id="">
+                        <option value="">Choose your level:</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+        
+                    <label for="technology">Type your technology:</label>
+                    <input type="text">
+        
+                    <label for="neighborhood">Neighborhood</label>
+                    <input type="text">
+        
+                    <label for="transportation">Transportation</label>
+                    <select name="" id="">
+                        <option value="">Choose your transport:</option>
+                        <option value="car">Car</option>
+                        <option value="motorcycle">Motorcycle</option>
+                        <option value="bicycle">Bicycle</option>
+                        <option value="public">Public Transport</option>
+                    </select>
+                </fieldset>
+                <button type="submit" class="button">
+                    <span>
+                        Submit
+                    </span>
+                    
+                </button>
+
+            </form>
+        </div>
+     
+    </div>
+ 
+
+</body>
+</html>
