@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="center">
         <div id="formContainer">
@@ -20,156 +22,162 @@
                 <option value="trainer">Trainer</option>
                 <option value="camper">Camper</option>
             </select>
-            
-           
+
+
             <form id="trainer">
                 <fieldset>
 
-                    <label for="menu_city" class="subtitle">City</label>
-                    <select name="menu_city" id="menu_city">
-                        <option>Select your city:</option>
+                    <label  for="menu_city" class="subtitle">City</label>
+                    <select name="menu_city" id="menu_city" >
+                        <option disabled selected >Choose your city</option>
                         <option value="Bucaramanga">Bucaramanga</option>
                         <option value="Bogota">Bogota</option>
                         <option value="Mexico">Mexico</option>
                         <option value="Medellin">Medellin</option>
-        
+
                     </select>
-                
+
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
-        
+                    <input type="text" name="name" id="name" placeholder="Enter your Name" required>
+
                     <label for="phone">Phone</label>
-                    <input type="number" name="phone" id="phone">
-                    
-                    
+                    <input type="number" name="phone" id="phone" placeholder="Enter your Phone" required>
+
+
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                    
-                    <label for="team">Choose your team:</label>
-                    <select name="team" id="team">  
+                    <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+
+                    <label for="team">Team</label>
+                    <select name="team" id="team" required>
+                        <option disabled selected>What is your team?</option>
                         <option value="1">Team 1</option>
                         <option value="2">Team 2</option>
                         <option value="3">Team 3</option>
                         <option value="4">Team 4</option>
                     </select>
                     <label for="hour">Hour</label>
-                    <select name="hour" id="hour">  
+                    <select name="hour" id="hour" required>
+                        <option disabled selected>Choose your Schedule:</option>
                         <option value="6:00 - 14:00">6:00 - 14:00</option>
                         <option value="14:00 - 22:00">14:00 - 22:00</option>
                     </select>
 
-                    
+                    <label for="language_name">Assignature Language</label>
+                    <select name="language_name" id="language_name" required>
+                        <option disabled selected >Choose your Language:</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JS">JS</option>
+                        <option value="Phyton">Phyton</option>
+                        <option value="Java">Java</option>
+                    </select>
+
+                    <label for="type">Assignature Type</label>
+                    <select name="type" id="type" required>
+                        <option disabled selected>Is Remote or Presencial?</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Presencial">Presencial</option>
+                    </select>
+
+                    <label for="sandbox">Assignature SandBox</label>
+                    <select name="sandbox" id="sandbox" required>
+                        <option disabled selected>Have Sandbox?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
                 </fieldset>
                 <button type="submit" class="button" name="submit" id="submit">
                     <span>
                         Submit
                     </span>
-                    
+
                 </button>
             </form>
 
             <form id="camper">
                 <fieldset>
-        
-                    <label for="menu_city_camper" class="subtitle">City</label>
-                    <select name="menu_city_camper" id="menu_city_camper">
+
+                    <label for="menu_city" class="subtitle">City</label>
+                    <select name="menu_city" id="menu_cityCamper">
                         <option>Select your city:</option>
                         <option value="Bucaramanga">Bucaramanga</option>
                         <option value="Bogota">Bogota</option>
                         <option value="Mexico">Mexico</option>
                         <option value="Medellin">Medellin</option>
-        
+
                     </select>
 
-                    <label for="name_camper">Name</label>
-                    <input type="text" name="name_camper" id="name_camper">
-        
-                    <label for="phone_camper">Phone</label>
-                    <input type="number" name="phone_camper" id="phone_camper">
-        
-        
-                    <label for="email_camper">Email</label>
-                    <input type="email" name="email_camper" id="email_camper">
+                    <label for="nameCamper">Name</label>
+                    <input type="text" name="nameCamper" id="nameCamper">
 
-                    <label for="team_camper">Team </label>
-                    <select name="team_camper" id="team_camper">
+                    <label for="phoneCamper">Phone</label>
+                    <input type="number" name="phoneCamper" id="phoneCamper">
+
+
+                    <label for="emailCamper">Email</label>
+                    <input type="email" name="emailCamper" id="emailCamper">
+
+                    <label for="teamCamper">Team </label>
+                    <select name="teamCamper" id="teamCamper">
                         <option value="">Choose your team:</option>
                         <option value="1">Team 1</option>
                         <option value="2">Team 2</option>
                         <option value="3">Team 3</option>
                         <option value="4">Team 4</option>
                     </select>
-        
-                    <label for="level">Level</label>
-                    <select name="level" id="level">
+
+
+                    
+                    <label for="hourCamper">Programming Hour</label>
+                    <select name="hourCamper" id="hourCamper">
+                        <option value="6:00 - 14:00">6:00 - 14:00</option>
+                        <option value="14:00 - 22:00">14:00 - 22:00</option>
+                    </select>
+                    
+                    
+                    <label for="english_hour">English Hour</label>
+                    <select name="english_hour" id="english_hour">
+                        <option value="6:00 - 7:00">6:00 - 7:00</option>
+                        <option value="7:00 - 8:00">7:00 - 8:00</option>
+                        <option value="8:00 - 9:00">8:00 - 9:00</option>
+                        <option value="9:00 - 10:00">9:00 - 10:00</option>
+                    </select>
+                    
+                    
+                    <label for="ser_hour">Ser Hour</label>
+                    <select name="ser_hour" id="ser_hour">
+                        <option value="10:00 - 11:00">10:00 - 11:00</option>
+                        <option value="11:00 - 12:00">11:00 - 12:00</option>
+                    </select>
+                    
+                    <label for="typeLevel">Level</label>
+                    <select name="typeLevel" id="typeLevel">
                         <option value="">Choose your level:</option>
                         <option value="Beginner">Beginner</option>
                         <option value="Intermediate">Intermediate</option>
                         <option value="Advanced">Advanced</option>
                     </select>
 
-                    <label for="is">Is</label>
-                        <input type="radio" name="is" value="Elective">Elective
-                        <input type="radio" name="is" value="Obligatory">Obligatory
 
-                    <label for="roadmad">Roadmap</label>
-                    <select name="roadmap" id="roadmap">
+                    <label for="typeRoadMap">RoadMap</label>
+                    <select name="typeRoadMap " id="typeRoadMap">
                         <option value="">Choose your roadmap:</option>
                         <option value="Basic Programming">Basic Programming</option>
                         <option value="Frontend">Frontend</option>
                         <option value="Backend">Backend</option>
                     </select>
-                    <div id="basic_programming_selectors" style="display:none">
-                        <ul>
-                            <li>10 credits</li>
-                            <li>3 Assignatures</li>
-                        </ul>
-                       
-                    </div>
                     
-                    <div id="frontend_selectors"  style="display:none">
-                        <ul>
-                            <li>42 credits</li>
-                            <li>8 Assignatures</li>
-                        </ul>
-                       
-                    </div>
-                    
-                    <div id="backend_selectors"  style="display:none">
-                        <ul>
-                            <li>65 credits</li>
-                            <li>12 Assignatures</li>   
-                        </ul>
-                       
-                    </div>
-                    
-
-                    <label for="hour_camper">Hour</label>
-                    <select name="hour_camper" id="hour_camper">  
-                        <option value="6:00 - 14:00">6:00 - 14:00</option>
-                        <option value="14:00 - 22:00">14:00 - 22:00</option>
+                    <label for="className">Class Name</label>
+                    <select name="className" id="className">
+                        <option value="" disabled selected>Class Name?</option>
+                        <option value="Apolo">Apolo</option>
+                        <option value="Artemis">Artemis</option>
+                        <option value="Sputnik">Sputnik</option>
                     </select>
 
-                    
-                    <label for="english_hour">English Hour</label>
-                    <select name="english_hour" id="english_hour">  
-                        <option value="6:00 - 7:00">6:00 - 7:00</option>
-                        <option value="7:00 - 8:00">7:00 - 8:00</option>
-                        <option value="8:00 - 9:00">8:00 - 9:00</option>
-                        <option value="9:00 - 10:00">9:00 - 10:00</option>
-                    </select>
-
-                          
-                    <label for="ser_hour">Ser Hour</label>
-                    <select name="ser_hour" id="ser_hour">  
-                        <option value="10:00 - 11:00">10:00 - 11:00</option>
-                        <option value="11:00 - 12:00">11:00 - 12:00</option>
-                    </select>
-
-        
                     <label for="neighborhood">Neighborhood</label>
-                    <input type="text" name="neighborhood" id= "neighborhood">
-        
+                    <input type="text" name="neighborhood" id="neighborhood">
+
                     <label for="transportation">Transportation</label>
                     <select name="transportation" id="transportation">
                         <option value="">Choose your transport:</option>
@@ -179,11 +187,11 @@
                         <option value="Public">Public Transport</option>
                     </select>
                 </fieldset>
+
                 <button type="submit" class="button" name="submit" id="submit">
                     <span>
                         Submit
                     </span>
-                    
                 </button>
 
             </form>
@@ -191,7 +199,8 @@
 
         <div id="result"></div>
     </div>
- 
+
 
 </body>
+
 </html>

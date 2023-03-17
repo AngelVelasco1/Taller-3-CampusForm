@@ -95,20 +95,13 @@ p {
   input[type="number"],
   input[type="email"],
   select {
-    padding: 10px 20px;
+    padding: 10px 14px;
     border-radius: 5px;
     border: none;
     margin-bottom: 10px;
     color: var(--text-color);
   }
-  input[type="radio"] {
-    width: 20px;
-    transform: scale(1.15);
-  }
-  input[type="radio"]:checked {
-    background-color: var(--form-color);
 
-  }
 
   select {
     width: 100%;
