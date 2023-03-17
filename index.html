@@ -7,8 +7,8 @@
     <title>Workshop 3</title>
     <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
             <form id="trainer">
                 <fieldset>
 
-                    <label for="menu_city" class="title">City</label>
+                    <label for="menu_city" class="subtitle">City</label>
                     <select name="menu_city" id="menu_city">
                         <option>Select your city:</option>
                         <option value="Bucaramanga">Bucaramanga</option>
@@ -71,7 +71,7 @@
             <form id="camper">
                 <fieldset>
         
-                    <label for="menu_city_camper" class="title">City</label>
+                    <label for="menu_city_camper" class="subtitle">City</label>
                     <select name="menu_city_camper" id="menu_city_camper">
                         <option>Select your city:</option>
                         <option value="Bucaramanga">Bucaramanga</option>
@@ -108,14 +108,41 @@
                         <option value="Advanced">Advanced</option>
                     </select>
 
+                    <label for="is">Is</label>
+                        <input type="radio" name="is" value="Elective">Elective
+                        <input type="radio" name="is" value="Obligatory">Obligatory
+
                     <label for="roadmad">Roadmap</label>
                     <select name="roadmap" id="roadmap">
                         <option value="">Choose your roadmap:</option>
                         <option value="Basic Programming">Basic Programming</option>
                         <option value="Frontend">Frontend</option>
                         <option value="Backend">Backend</option>
-
                     </select>
+                    <div id="basic_programming_selectors" style="display:none">
+                        <ul>
+                            <li>10 credits</li>
+                            <li>3 Assignatures</li>
+                        </ul>
+                       
+                    </div>
+                    
+                    <div id="frontend_selectors"  style="display:none">
+                        <ul>
+                            <li>42 credits</li>
+                            <li>8 Assignatures</li>
+                        </ul>
+                       
+                    </div>
+                    
+                    <div id="backend_selectors"  style="display:none">
+                        <ul>
+                            <li>65 credits</li>
+                            <li>12 Assignatures</li>   
+                        </ul>
+                       
+                    </div>
+                    
 
                     <label for="hour_camper">Hour</label>
                     <select name="hour_camper" id="hour_camper">  
@@ -162,8 +189,7 @@
             </form>
         </div>
 
-        <div id="result" style="display: none;"></div>
-        <div id="resultCamper" style="display: none"></div>
+        <div id="result"></div>
     </div>
  
 

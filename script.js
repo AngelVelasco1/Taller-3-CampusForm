@@ -3,6 +3,7 @@ const menu = document.querySelector("#menu");
 const city = document.querySelector("#menu_city");
 const camperForm = document.querySelector("#camper");
 const trainerForm = document.querySelector("#trainer");
+const mainForm = document.querySelector("#formContainer");
 
 /* Funcion para mostrar el formulario adecuado */
 menu.addEventListener("change", function(){
@@ -22,6 +23,7 @@ menu.addEventListener("change", function(){
         }       
     }
 });
+
 /* Matriz de los datos */
 let campus = { 
     trainers: {
@@ -33,8 +35,7 @@ let campus = {
             typeOfTeam : [],
             hour : [],
         },
-    },
-    
+    }, 
     campers: {
         cities: [],
         names : [],
@@ -43,6 +44,7 @@ let campus = {
         hour: [],
         level: [],
         roadMap: [],
+        is: [],
         team : {
             typeOfTeam : [],
 
@@ -56,7 +58,7 @@ let campus = {
         },     
             neighborhood : [],
             transportation : [],
-    },
+    }
 }
 /* Envio de datos trainer */
 trainerForm.addEventListener("submit", (e)=> {
@@ -96,6 +98,7 @@ trainerForm.addEventListener("submit", (e)=> {
 }
   
 );
+/* Envio de datos camper */
 camperForm.addEventListener("submit", (e)=> {
     e.preventDefault();
     const camperFormData = new FormData(document.getElementById("camper"));
@@ -114,6 +117,7 @@ camperForm.addEventListener("submit", (e)=> {
 
         },
         level: camperFormData.get('level'),
+        is: camperFormData.get('is'),
         neighborhood: camperFormData.get('neighborhood'),
         transportation: camperFormData.get('transportation'),
         roadMap: camperFormData.get('roadmap')
@@ -129,12 +133,13 @@ camperForm.addEventListener("submit", (e)=> {
     campus.campers.team.ser.hour.push(camper.team.ser);
 
     campus.campers.level.push(camper.level);
+    campus.campers.is.push(camper.is);
     campus.campers.roadMap.push(camper.roadMap);
     campus.campers.neighborhood.push(camper.neighborhood);
     campus.campers.transportation.push(camper.transportation);
     
-    const resultElementCamper = document.getElementById("resultCamper");
-    resultElementCamper.innerHTML = `
+    const resultElement = document.getElementById("result");
+    resultElement.innerHTML = `
         <p>City: ${camper.city}</p>   
         <p>Name: ${camper.name}</p>
         <p>Phone: ${camper.phone}</p>
@@ -147,10 +152,42 @@ camperForm.addEventListener("submit", (e)=> {
 
         <p>Level: ${camper.level}</p>
         <p>Roadmap: ${camper.roadMap}</p>
+        <p>Is: ${camper.is}</p>
         <p>Neighborhood: ${camper.neighborhood}</p>
         <p>Transportation: ${camper.transportation}</p>
 
     `;
     // Muestra el elemento de resultado
-    resultElementCamper.style.display = "block";  
-})
+    resultElement.style.display = "block";  
+});
+/* Vista de todos los datos en consola */
+const consoleData = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const alldata = Object.fromEntries(data.entries());
+    console.log(alldata);
+}
+mainForm.addEventListener('submit', consoleData);
+/* RoadMap */
+document.getElementById("roadmap").addEventListener("change", function() {
+    var selectedOption = document.getElementById("roadmap").value;
+
+    // mostrar / ocultar selectores según la opción seleccionada
+    if (selectedOption === "Basic Programming") {
+        document.getElementById("basic_programming_selectors").style.display = "block";
+        document.getElementById("frontend_selectors").style.display = "none";
+        document.getElementById("backend_selectors").style.display = "none";
+    } else if (selectedOption === "Frontend") {
+        document.getElementById("basic_programming_selectors").style.display = "none";
+        document.getElementById("frontend_selectors").style.display = "block";
+        document.getElementById("backend_selectors").style.display = "none";
+    } else if (selectedOption === "Backend") {
+        document.getElementById("basic_programming_selectors").style.display = "none";
+        document.getElementById("frontend_selectors").style.display = "none";
+        document.getElementById("backend_selectors").style.display = "block";
+    } else {
+        document.getElementById("basic_programming_selectors").style.display = "none";
+        document.getElementById("frontend_selectors").style.display = "none";
+        document.getElementById("backend_selectors").style.display = "none";
+    }
+});
