@@ -199,14 +199,14 @@ camperForm.addEventListener("submit", (e) => {
 
     const resultElement = document.getElementById("result");
     resultElement.innerHTML = `
-        <p>City: ${camper.cityCamper}</p>   
-        <p>Name: ${camper.nameCamper}</p>
-        <p>Phone: ${camper.phoneCamper}</p>
-        <p>Email: ${camper.emailCamper}</p>
-        <p>Team: ${camper.teamCamper}</p>
-        <p>Programming Hour: ${camper.hourCamper}</p>
-        <p>English Hour: ${camper.english_hour}</p>
-        <p>Ser Hour: ${camper.ser_hour}</p>
+        <p>City ➡ ${camper.cityCamper}</p>   
+        <p>Name ➡ ${camper.nameCamper}</p>
+        <p>Phone ➡ ${camper.phoneCamper}</p>
+        <p>Email ➡ ${camper.emailCamper}</p>
+        <p>Team ➡ ${camper.teamCamper}</p>
+        <p>Programming Hour ➡ ${camper.hourCamper}</p>
+        <p>English Hour ➡ ${camper.english_hour}</p>
+        <p>Ser Hour ➡ ${camper.ser_hour}</p>
      
         <p>Level: ${camper.typeLevel}</p>
         <p>RoadMap: ${camper.typeRoadMap}</p>
