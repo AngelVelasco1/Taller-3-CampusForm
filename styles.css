@@ -187,3 +187,22 @@ input:focus-visible {
  #newObject input:focus-visible {
   outline-color: var(--focus-red);
  }
+ #addObject {
+  font-size: 0.9rem;
+  position: relative;
+  background: var(--focus-red);
+  overflow: hidden;
+  border: none;
+  margin: 0 auto;
+  color: var(--white);
+  cursor: pointer;
+  margin-block-start: 20px;
+  margin-block-end: 15px;
+  padding: 10px 15px;
+  transition: all 0.5s;
+ }
+ #addObject:hover {
+
+  box-shadow: -6px 6px 2px 0px var(--bg-color);
+
+ }
