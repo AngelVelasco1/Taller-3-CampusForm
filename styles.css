@@ -4,6 +4,7 @@
     --text-color: #0e1977;
     --white: #fff;
     --blue-light: #5e5cff;
+    --focus-red: #FF7F7F;
 }
 * {
     padding: 0;
@@ -102,7 +103,9 @@ p {
     color: var(--text-color);
   }
 
-
+input:focus-visible {
+  outline-color: var(--blue-light);
+}
   select {
     width: 100%;
   }
@@ -174,4 +177,13 @@ p {
      transform: scale(1);
     }
    }
-   
+   .hidden {
+      display: none;
+  
+   }
+   #newObject label {
+  color: var(--form-color);
+ }
+ #newObject input:focus-visible {
+  outline-color: var(--focus-red);
+ }

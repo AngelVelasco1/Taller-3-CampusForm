@@ -1,29 +1,36 @@
-/* Seleccion de elemntos HTML */
+/* Seleccion de elementos HTML */
 const mainForm = document.querySelector("#formContainer");
 const menu = document.querySelector("#menu");
 const city = document.querySelector("#menu_city");
 const camperForm = document.querySelector("#camper");
 const trainerForm = document.querySelector("#trainer");
+const roadMap = document.querySelector("#roadMap");
+
 /* Funcion para mostrar el formulario adecuado */
 menu.addEventListener("change", function () {
     if (menu.value === "camper") {
         camperForm.style.display = "block";
-
         if (menu.value === "camper") {
             trainerForm.style.display = "none"
         }
     }
     if (menu.value === "trainer") {
         trainerForm.style.display = "block";
-
         if (menu.value === "trainer") {
             camperForm.style.display = "none"
         }
     }
 });
+
 /* Matriz de los datos */
 let campus = {
+    medellinPhone: "3145874751",
+    bucaramangaAddress: "Calle 28 - 37",
     trainers: {
+        newObject: {
+            newObjectName: [],
+            newObjectValue: []
+        },
         cities: [],
         names: [],
         phone: [],
@@ -37,7 +44,6 @@ let campus = {
             language_type: [],
             sandbox: [],
         }
-
     },
     campers: {
         cities: [],
@@ -51,27 +57,29 @@ let campus = {
             ser_hour: []
         },
         level: {
-            typeLevel: [],
-            prerequisite: [],
-          
-            selective_or_obligatory: []
+            typeLevel: []
         },
         roadMap: {
             typeRoadMap: [],
-            num_credits: [],
-            num_assignatures: [],
+            basicProgramming: '8 Credits',
+            frontend: '12 Credits',
+            backend: '24 Credits'
         },
         className: [],
         neighborhood: [],
         transportation: [],
     }
 };
+
 /* Envio de datos trainer */
 trainerForm.addEventListener("submit", (e) => {
     e.preventDefault();
+
     /* Extraccion de elementos y propiedades de trainer con Object.fromEntries */
     const trainerFormData = new FormData(trainerForm);
     const {
+        newObjectName,
+        newObjectValue,
         menu_city: city,
         name,
         phone,
@@ -85,6 +93,10 @@ trainerForm.addEventListener("submit", (e) => {
 
     /* Objeto con propiedades desctructuradas */
     const trainer = {
+        newObject: {
+            newObjectName,
+            newObjectValue,
+        },
         city,
         name,
         phone,
@@ -97,17 +109,19 @@ trainerForm.addEventListener("submit", (e) => {
             sandbox,
         }
     }
-
     /* Agregando el objeto trainer a la matriz campus */
         campus.trainers.cities.push(trainer.city);
         campus.trainers.names.push(trainer.name);
         campus.trainers.phone.push(trainer.phone);
-        campus.trainers.team.typeOfTeam.push(trainer.team.typeOfTeam);
-        campus.trainers.team.hour.push(trainer.team.hour);
+        campus.trainers.team.typeOfTeam.push(trainer.typeOfTeam);
+        campus.trainers.team.hour.push(trainer.hour);
         campus.trainers.email.push(trainer.email);
-        campus.trainers.assignature.language_name.push(trainer.assignature.language_name);
-        campus.trainers.assignature.language_type.push(trainer.assignature.language_type);
-        campus.trainers.assignature.sandbox.push(trainer.assignature.sandbox)
+        campus.trainers.assignature.language_name.push(trainer.language_name);
+        campus.trainers.assignature.language_type.push(trainer.language_type);
+        campus.trainers.assignature.sandbox.push(trainer.sandbox);
+        campus.trainers.newObject.newObjectName.push(trainer.newObjectName);
+        campus.trainers.newObject.newObjectValue.push(trainer.newObjectValue);
+
 
     const resultElement = document.getElementById("result");
     resultElement.innerHTML = `
@@ -119,16 +133,17 @@ trainerForm.addEventListener("submit", (e) => {
        <p>Hour ➡ ${trainer.hour}</p>
        <p>Assignature Language ➡ ${trainer.assignature.language_name}</p>
        <p>Assignature Type ➡ ${trainer.assignature.language_type}</p>
-       <p>Assignature Sandbox ➡ ${trainer.assignature.sandbox}</p>
+       <p>Assignature Sandbox ➡ ${trainer.assignature.sandbox}</p> 
+
    `;
     resultElement.style.display = "block";
 }
 );
+
 /* Envio de datos camper */
 camperForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
- 
     const camperFormData = new FormData(camperForm);
     const {
         menu_city: cityCamper,
@@ -139,13 +154,8 @@ camperForm.addEventListener("submit", (e) => {
         hourCamper,
         english_hour,
         ser_hour,
-        typeLevel,
-        prerequisite,
-        technology,
-        selective_or_obligatory,
-        typeRoadMap,
-        num_credits,
-        num_assignatures,
+        typeLevel,   
+        roadMap,
         className,
         neighborhood,
         transportation,
@@ -162,12 +172,9 @@ camperForm.addEventListener("submit", (e) => {
         ser_hour,
 
         typeLevel,
-        prerequisite,
-        technology,
-        selective_or_obligatory,
-        typeRoadMap,
-        num_credits,
-        num_assignatures,
+      
+        roadMap,
+     
         className,
         neighborhood,
         transportation,
@@ -177,25 +184,14 @@ camperForm.addEventListener("submit", (e) => {
     campus.campers.phone.push(camper.phoneCamper);
     campus.campers.email.push(camper.emailCamper);
     campus.campers.hour.push(camper.hourCamper);
-
     campus.campers.team.typeOfTeam.push(camper.teamCamper);
     campus.campers.team.english_hour.push(camper.english_hour);
     campus.campers.team.ser_hour.push(camper.ser_hour);
-
     campus.campers.level.typeLevel.push(camper.typeLevel);
-   /*  campus.campers.level.prerequisite.push(camper.prerequisite); 
-    campus.campers.level.technology.push(camper.technology);
-    campus.campers.level.selective_or_obligatory.push(camper.selective_or_obligatory); */
-
-    campus.campers.roadMap.typeRoadMap.push(camper.typeRoadMap);
-
-
+    campus.campers.roadMap.typeRoadMap.push(camper.roadMap);
     campus.campers.className.push(camper.className);
     campus.campers.neighborhood.push(camper.neighborhood);
     campus.campers.transportation.push(camper.transportation);
-
-
-
 
     const resultElement = document.getElementById("result");
     resultElement.innerHTML = `
@@ -207,15 +203,11 @@ camperForm.addEventListener("submit", (e) => {
         <p>Programming Hour ➡ ${camper.hourCamper}</p>
         <p>English Hour ➡ ${camper.english_hour}</p>
         <p>Ser Hour ➡ ${camper.ser_hour}</p>
-     
-        <p>Level: ${camper.typeLevel}</p>
-        <p>RoadMap: ${camper.typeRoadMap}</p>
-
-        <p>Class Name: ${camper.className}</p>
-        <p>Neighborhood: ${camper.neighborhood}</p>
-        <p>transportation:${camper.transportation}</p>
-
-     
+        <p>Level ➡ ${camper.typeLevel}</p>
+        <p>RoadMap ➡ ${camper.roadMap}</p>
+        <p>Class Name ➡ ${camper.className}</p>
+        <p>Neighborhood ➡ ${camper.neighborhood}</p>
+        <p>transportation ➡${camper.transportation}</p>
     `;
     // Muestra el elemento de resultado
     resultElement.style.display = "block";
@@ -229,4 +221,51 @@ const consoleData = (e) => {
     console.log(alldata);
 }
 mainForm.addEventListener('submit', consoleData);
+
+/* Datos de la ciudad en consola */
+city.addEventListener('change', (e)=> {
+    const {value} = e.target;
+    if (value === 'Medellin') {
+        const {medellinPhone} = campus;
+        console.log(`The medellin phone is ➡ ${medellinPhone}`)
+    }
+    else if (value === 'Bucaramanga') {
+        const {bucaramangaAddress} = campus;
+        console.log(`The bucaramanga address is ${bucaramangaAddress}`)
+    }
+});
+/* Datos del roadmap en consola */
+roadMap.addEventListener('change', (e) => {
+    const {value} = e.target;
+    if (value === 'Basic Programming') {
+        const {basicProgramming} = campus.campers.roadMap;
+        console.log(`El numero de creditos es de: ${basicProgramming}`)
+    }
+    else if (value === 'Frontend') {
+        const {frontend} = campus.campers.roadMap;
+        console.log(`El numero de creditos es de: ${frontend}`)
+    }
+    else {
+        const {backend} = campus.campers.roadMap;
+        console.log(`El numero de creditos es de: ${backend}`)
+    };
+
+});
+
+
+const addButton = document.getElementById("addObject");
+addButton.addEventListener("click", addObject);
+addButton.addEventListener("click", show);
+
+function addObject() {
+    campus.trainers.newObject.push({
+        newObject: [],
+    });
+   
+};
+function show() {
+     const divNewObject = document.getElementById("newObject");
+     divNewObject.classList.toggle("hidden")
+}
+
 
